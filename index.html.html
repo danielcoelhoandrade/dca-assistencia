@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCA Assistência Técnica | Manutenção de Computadores em Anápolis</title>
+    <meta name="description" content="Assistência técnica especializada em computadores e notebooks em Anápolis/GO. Atendimento em domicílio. Formatação, limpeza e montagem.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (Versão Standalone) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-tech-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        /* Utilitário para esconder elementos via JS */
+        .hidden-menu { display: none; }
+    </style>
+</head>
+<body class="font-sans text-slate-900 bg-white">
+
+    <!-- HEADER -->
+    <header id="main-header" class="fixed w-full z-50 transition-all duration-300 py-5 bg-transparent">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo Estilizada (Baseada na Referência) -->
+            <a href="#" class="group">
+                <div class="bg-black border border-slate-800 px-4 py-2 rounded-lg flex flex-col items-center justify-center shadow-lg group-hover:border-blue-600 transition-colors duration-300">
+                    <span class="text-2xl font-black text-white leading-none tracking-tighter">DCA</span>
+                    <span class="text-[0.6rem] font-bold text-white uppercase tracking-widest leading-none mt-1 group-hover:text-blue-400 transition-colors">Assistência Técnica</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#servicos" class="text-slate-300 hover:text-white font-medium transition-colors text-sm uppercase tracking-wide">Serviços</a>
+                <a href="#sobre" class="text-slate-300 hover:text-white font-medium transition-colors text-sm uppercase tracking-wide">Como Funciona</a>
+                <a href="#escopo" class="text-slate-300 hover:text-white font-medium transition-colors text-sm uppercase tracking-wide">O que não fazemos</a>
+                <a href="#contato" class="text-slate-300 hover:text-white font-medium transition-colors text-sm uppercase tracking-wide">Contato</a>
+                
+                <a href="#" class="whatsapp-link bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-green-500/30 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-bold transition-all duration-300 transform hover:-translate-y-1 text-sm">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Orçamento Rápido
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900 border-t border-slate-800 p-4 flex flex-col gap-4 shadow-xl">
+            <a href="#servicos" class="mobile-link text-slate-300 hover:text-white py-2 border-b border-slate-800">Serviços</a>
+            <a href="#sobre" class="mobile-link text-slate-300 hover:text-white py-2 border-b border-slate-800">Como Funciona</a>
+            <a href="#escopo" class="mobile-link text-slate-300 hover:text-white py-2 border-b border-slate-800">O que não fazemos</a>
+            <a href="#contato" class="mobile-link text-slate-300 hover:text-white py-2 border-b border-slate-800">Contato</a>
+            <a href="#" class="whatsapp-link bg-green-600 text-white py-3 rounded-lg font-bold flex justify-center items-center gap-2">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                Chamar no WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main>
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-tech-pattern overflow-hidden" id="home">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/80 to-slate-900 pointer-events-none"></div>
+            
+            <div class="container mx-auto px-4 relative z-10 text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-blue-900/30 border border-blue-700/50 text-blue-300 px-4 py-1.5 rounded-full text-sm font-medium">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i> Atendimento em Domicílio em Anápolis-GO
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                            Seu computador novo de novo, sem <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">sair de casa.</span>
+                        </h1>
+                        <p class="text-lg text-slate-400 max-w-xl mx-auto md:mx-0">
+                            Especialista em formatação, limpeza preventiva e montagem de setups. Evite filas e deixe seu equipamento nas mãos de quem entende.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+                            <a href="#" class="whatsapp-link bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-green-500/30 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold transition-all duration-300 transform hover:-translate-y-1">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                Agendar Visita Técnica
+                            </a>
+                            <a href="#servicos" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-white border border-slate-600 hover:bg-slate-800 transition-colors">
+                                Ver Serviços
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Flutuante (Visual) -->
+                    <div class="md:w-1/2 flex justify-center relative">
+                        <div class="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full"></div>
+                        <div class="relative bg-slate-800/50 backdrop-blur border border-slate-700 p-6 rounded-2xl max-w-sm w-full shadow-2xl">
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="bg-green-500/20 p-3 rounded-full text-green-400">
+                                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Garantia de Qualidade</h3>
+                                    <p class="text-slate-400 text-sm">Serviço transparente e honesto.</p>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 text-slate-300 bg-slate-900/50 p-3 rounded-lg">
+                                    <i data-lucide="check-circle-2" class="text-blue-400 w-5 h-5"></i>
+                                    <span>Formatação Completa</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-slate-300 bg-slate-900/50 p-3 rounded-lg">
+                                    <i data-lucide="check-circle-2" class="text-blue-400 w-5 h-5"></i>
+                                    <span>Limpeza Preventiva</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-slate-300 bg-slate-900/50 p-3 rounded-lg">
+                                    <i data-lucide="check-circle-2" class="text-blue-400 w-5 h-5"></i>
+                                    <span>Montagem de PC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="servicos" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">O que eu faço</h2>
+                    <h3 class="text-3xl font-bold text-slate-800">Soluções para Computadores e Notebooks</h3>
+                    <p class="text-slate-600 mt-4">Serviço técnico especializado em diagnóstico, montagem e manutenção de Desktops e Notebooks.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- Service 0: Diagnóstico -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i data-lucide="activity" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Diagnóstico Técnico</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Seu equipamento não liga, bipa ou trava? Realizo testes precisos para identificar a falha em Desktops ou Notebooks.</p>
+                    </div>
+
+                    <!-- Service 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i data-lucide="monitor" class="w-8 h-8"></i>
+                        </div>
+                        <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full mb-2 inline-block">Mais Pedido</span>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Formatação & Otimização</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Instalação do Windows, drivers atualizados, pacote Office e otimização para deixar seu PC rápido como novo.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i data-lucide="wrench" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Limpeza Preventiva</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Remoção de poeira interna, troca de pasta térmica de alta performance e organização de cabos. Evite superaquecimento.</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i data-lucide="cpu" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Montagem de PC</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Comprou as peças na internet? Eu monto seu computador (Gamer ou Escritório) com cable management profissional.</p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i data-lucide="smartphone" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Upgrades de Hardware</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Instalação de SSD, memória RAM ou placa de vídeo para dar uma sobrevida ao seu equipamento antigo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE LIMITATION SECTION -->
+        <section id="escopo" class="py-20 bg-white border-y border-slate-100">
+            <div class="container mx-auto px-4">
+                <div class="bg-amber-50 rounded-2xl p-8 md:p-12 border border-amber-100 flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/3 flex justify-center">
+                        <div class="bg-white p-6 rounded-full shadow-lg">
+                            <i data-lucide="wrench" class="text-amber-500 w-16 h-16"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Transparência Total: O que <span class="text-amber-600">NÃO</span> realizamos</h3>
+                        <p class="text-slate-600 mb-6">
+                            Para garantir a qualidade e especialização do meu serviço, foco exclusivamente em manutenção lógica e mecânica (montagem/limpeza).
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i data-lucide="x-circle" class="text-red-500 shrink-0 mt-1 w-5 h-5"></i>
+                                <span><strong>Não realizo reparo eletrônico:</strong> Solda de componentes, troca de capacitores, reparo de placa-mãe queimada ou curto-circuito.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i data-lucide="x-circle" class="text-red-500 shrink-0 mt-1 w-5 h-5"></i>
+                                <span><strong>Não conserto monitores ou impressoras:</strong> Foco total em gabinetes e notebooks (sistema/limpeza).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCATION & CONTACT CTA -->
+        <section id="contato" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
+                <i data-lucide="map-pin" class="w-64 h-64"></i>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-bold mb-6">Atendimento Exclusivo em Anápolis</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-600 p-3 rounded-lg">
+                                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Vou até você</h4>
+                                    <p class="text-slate-300">Cobro taxa de deslocamento (variável conforme o bairro). Evite o trânsito e o peso de carregar seu PC.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-600 p-3 rounded-lg">
+                                    <i data-lucide="clock" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Agilidade no Atendimento</h4>
+                                    <p class="text-slate-300">Serviços como formatação e limpeza muitas vezes são finalizados no mesmo dia.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white text-slate-900 p-8 rounded-2xl shadow-2xl max-w-md w-full">
+                        <h3 class="text-2xl font-bold mb-2">Solicite um Orçamento</h3>
+                        <p class="text-slate-500 mb-6 text-sm">Respondo rapidamente pelo WhatsApp.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="p-3 bg-slate-50 rounded border border-slate-200 text-sm">
+                                <span class="block font-bold text-slate-700 mb-1">Passo 1:</span>
+                                Descreva o problema (ex: "Computador lento", "Após um acontecimento começou a ter Tela azul").
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded border border-slate-200 text-sm">
+                                <span class="block font-bold text-slate-700 mb-1">Passo 2:</span>
+                                Informe seu bairro em Anápolis.
+                            </div>
+                            
+                            <a href="#" class="whatsapp-link w-full bg-green-600 hover:bg-green-700 text-white shadow-lg hover:shadow-green-500/30 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold transition-all duration-300 transform hover:-translate-y-1 text-lg">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                Iniciar Conversa no WhatsApp
+                            </a>
+                            
+                            <p className="text-center text-xs text-slate-400 mt-2">
+                                Ao clicar, você será redirecionado para o WhatsApp da DCA.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-900">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col items-center md:items-start">
+                <a href="#" class="flex flex-col items-center md:items-start gap-1 group mb-2">
+                    <div class="bg-black border border-slate-800 px-3 py-2 rounded-lg flex flex-col items-center justify-center shadow-lg">
+                        <span class="text-2xl font-black text-white leading-none tracking-tighter">DCA</span>
+                        <span class="text-[0.5rem] font-bold text-blue-500 uppercase tracking-widest leading-none mt-1">Assistência Técnica</span>
+                    </div>
+                </a>
+                <p class="text-slate-500 text-sm">Daniel Andrade | Técnico em Informática</p>
+            </div>
+            
+            <div class="text-sm text-center md:text-right space-y-2">
+                <p>&copy; 2024 DCA Assistência Técnica.</p>
+                <p>Atendimento em Domicílio • Anápolis - Goiás</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY WHATSAPP BUTTON -->
+    <a href="#" class="whatsapp-link fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg shadow-green-500/40 hover:bg-green-600 hover:scale-110 transition-all duration-300 md:hidden flex items-center gap-2" aria-label="Falar no WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // --- 1. CONFIGURAÇÃO GERAL ---
+        // Altere o número abaixo para o seu WhatsApp (apenas números, com DDD)
+        const whatsappNumber = "556299759087"; 
+        const defaultMessage = "Olá, vim pelo site e gostaria de um orçamento para meu computador.";
+
+        // --- 2. INICIALIZAR ÍCONES LUCIDE ---
+        lucide.createIcons();
+
+        // --- 3. CONFIGURAR LINKS DO WHATSAPP ---
+        // Seleciona todos os links com a classe 'whatsapp-link' e define o HREF correto
+        const waLinks = document.querySelectorAll('.whatsapp-link');
+        const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+        
+        waLinks.forEach(link => {
+            link.href = waUrl;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+        });
+
+        // --- 4. COMPORTAMENTO DO CABEÇALHO (SCROLL) ---
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('bg-slate-900/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
+                header.classList.remove('bg-transparent', 'py-5');
+            } else {
+                header.classList.remove('bg-slate-900/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
+                header.classList.add('bg-transparent', 'py-5');
+            }
+        });
+
+        // --- 5. MENU MOBILE ---
+        const btnMobile = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Alternar menu ao clicar no botão
+        btnMobile.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu ao clicar em um link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Fechar menu ao redimensionar tela para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
